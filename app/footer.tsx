@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} Swervin's Fab Haus. All rights
+            &copy; {new Date().getFullYear()} Swervin's Fab Häus. All rights
             reserved.
           </p>
           <div className="flex gap-6">
