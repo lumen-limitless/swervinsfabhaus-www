@@ -21,7 +21,20 @@ export const defaultMetadata: Metadata = {
   description: APP_DESCRIPTION,
   metadataBase: baseUrl,
   generator: "Next.js",
-  keywords: [],
+  keywords: [
+    "Welding",
+    "Fabrication",
+    "Welding Fabrication",
+    "Performance Exhaust",
+    "Custom Exhaust",
+    "Rochester NY Welding",
+    "Rochester NY Fabrication",
+    "Rochester NY Custom Exhaust",
+    "Rochester NY Welding Fabrication",
+    "Rochester NY Welding Fabrication Custom Exhaust",
+    "Rochester NY Welding Fabrication Custom Exhaust Systems",
+    "Rochester NY Welding Fabrication Custom Exhaust Systems Installation",
+  ],
 
   openGraph: {
     type: "website",

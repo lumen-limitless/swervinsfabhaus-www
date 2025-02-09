@@ -16,6 +16,18 @@ const config = {
         "2xl": "1400px",
       },
     },
+
+    extend: {
+      animation: {
+        move: "move 5s linear infinite",
+      },
+      keyframes: {
+        move: {
+          "0%": { transform: "translateX(-200px)" },
+          "100%": { transform: "translateX(200px)" },
+        },
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config

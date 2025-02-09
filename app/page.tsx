@@ -1,3 +1,5 @@
+import { ServiceCard } from "@/components/service-card"
+
 export const metadata = {
   title: "Swervin's Fab Haus - Custom Welding & Fabrication",
   description:
@@ -31,27 +33,16 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="mb-12 text-center text-3xl font-bold">Our Services</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="rounded-lg bg-zinc-100 p-6">
+            {/* <div className="rounded-lg bg-zinc-100 p-6">
               <h3 className="mb-4 text-xl font-semibold">Custom Fabrication</h3>
               <p>
                 From concept to creation, we bring your metal fabrication
                 projects to life with precision and expertise.
               </p>
-            </div>
-            <div className="rounded-lg bg-zinc-100 p-6">
-              <h3 className="mb-4 text-xl font-semibold">Welding Services</h3>
-              <p>
-                Expert welding for all types of metals, including TIG, MIG, and
-                stick welding capabilities.
-              </p>
-            </div>
-            <div className="rounded-lg bg-zinc-100 p-6">
-              <h3 className="mb-4 text-xl font-semibold">Metal Repairs</h3>
-              <p>
-                Professional repair services for metal equipment, structures,
-                and components.
-              </p>
-            </div>
+            </div> */}
+            <ServiceCard />
+            <ServiceCard />
+            <ServiceCard />
           </div>
         </div>
       </section>
@@ -72,6 +63,38 @@ export default function Page() {
               project is completed to the highest standards, on time and within
               budget.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-zinc-100 py-20">
+        <div className="mx-auto max-w-7xl px-5">
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            What Our Clients Say
+          </h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105">
+              <p className="mb-4 italic">
+                "Outstanding quality and attention to detail. They brought my
+                custom project to life exactly as I envisioned."
+              </p>
+              <p className="font-semibold">- John Smith</p>
+            </div>
+            <div className="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105">
+              <p className="mb-4 italic">
+                "Professional, reliable, and exceptional craftsmanship. Highly
+                recommend their services!"
+              </p>
+              <p className="font-semibold">- Sarah Johnson</p>
+            </div>
+            <div className="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105">
+              <p className="mb-4 italic">
+                "Fast turnaround without compromising on quality. A pleasure to
+                work with from start to finish."
+              </p>
+              <p className="font-semibold">- Mike Davis</p>
+            </div>
           </div>
         </div>
       </section>
