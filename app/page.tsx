@@ -1,3 +1,4 @@
+import Contact from "@/components/contact"
 import { ServiceCard } from "@/components/service-card"
 
 export const metadata = {
@@ -100,39 +101,7 @@ export default function Page() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <div className="mx-auto max-w-7xl px-5">
-          <h2 className="mb-12 text-center text-3xl font-bold">Contact Us</h2>
-          <div className="text-center">
-            <p className="mb-6 text-lg">
-              Ready to start your project? Contact us today for a free quote.
-            </p>
-            <div className="space-y-2">
-              <p>
-                <strong>Phone:</strong>{" "}
-                <a
-                  href="tel:+1234567890"
-                  className="text-yellow-600 hover:underline"
-                >
-                  (123) 456-7890
-                </a>
-              </p>
-              <p>
-                <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:info@swervinsfabhaus.com"
-                  className="text-yellow-600 hover:underline"
-                >
-                  info@swervinsfabhaus.com
-                </a>
-              </p>
-              <p>
-                <strong>Location:</strong> Farmington, NY
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Contact />
     </div>
   )
 }
