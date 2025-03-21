@@ -1,4 +1,5 @@
 import Contact from "@/components/contact"
+import { Marquee3D } from "@/components/reviews"
 import { ServiceCard } from "@/components/service-card"
 
 export const metadata = {
@@ -69,35 +70,8 @@ export default function Page() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-zinc-100 py-20">
-        <div className="mx-auto max-w-7xl px-5">
-          <h2 className="mb-12 text-center text-3xl font-bold">
-            What Our Clients Say
-          </h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105">
-              <p className="mb-4 italic">
-                "Outstanding quality and attention to detail. They brought my
-                custom project to life exactly as I envisioned."
-              </p>
-              <p className="font-semibold">- John Smith</p>
-            </div>
-            <div className="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105">
-              <p className="mb-4 italic">
-                "Professional, reliable, and exceptional craftsmanship. Highly
-                recommend their services!"
-              </p>
-              <p className="font-semibold">- Sarah Johnson</p>
-            </div>
-            <div className="transform rounded-lg bg-white p-6 shadow-md transition duration-300 hover:scale-105">
-              <p className="mb-4 italic">
-                "Fast turnaround without compromising on quality. A pleasure to
-                work with from start to finish."
-              </p>
-              <p className="font-semibold">- Mike Davis</p>
-            </div>
-          </div>
-        </div>
+      <section className="bg-background flex py-20">
+        <Marquee3D />
       </section>
 
       {/* Contact Section */}
