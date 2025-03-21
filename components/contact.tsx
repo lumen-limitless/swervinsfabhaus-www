@@ -1,36 +1,39 @@
 "use client"
 
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
 import { EMAIL_ADDRESS, LOCATION, PHONE_NUMBER } from "@/lib/constants"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
-import { useState } from "react"
+import { contactFormSchema, ContactFormValues } from "@/lib/schemas/contact-schema"
+import { toast } from "sonner"
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  })
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle form submission logic here
-    console.log(formData)
-    alert("Thank you for your message! We'll get back to you soon.")
-    setFormData({
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
       name: "",
       email: "",
       phone: "",
       message: "",
-    })
+    },
+  })
+
+  function onSubmit(data: ContactFormValues) {
+    // Handle form submission logic here
+    console.log(data)
+    toast.success("Thank you for your message! We'll get back to you soon.")
+    form.reset()
   }
 
   return (
@@ -47,48 +50,77 @@ export default function Contact() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-8">
             <h3 className="mb-6 text-2xl font-bold">Send Us a Message</h3>
-            <form onSubmit={handleSubmit}>
-              <div className="space-y-4">
-                <div>
-                  <Input
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="border-zinc-700 bg-zinc-800"
-                    required
-                  />
-                </div>
-                <div>
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="border-zinc-700 bg-zinc-800"
-                    required
-                  />
-                </div>
-                <div>
-                  <Input
-                    name="phone"
-                    placeholder="Your Phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="border-zinc-700 bg-zinc-800"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    name="message"
-                    placeholder="Tell us about your project"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="min-h-[150px] border-zinc-700 bg-zinc-800"
-                    required
-                  />
-                </div>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Your Name"
+                          className="border-zinc-700 bg-zinc-800"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="Your Email"
+                          className="border-zinc-700 bg-zinc-800"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone (Optional)</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Your Phone"
+                          className="border-zinc-700 bg-zinc-800"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Tell us about your project"
+                          className="min-h-[150px] border-zinc-700 bg-zinc-800"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <Button
                   type="submit"
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
@@ -96,8 +128,8 @@ export default function Contact() {
                   Send Message
                   <Send className="ml-2 h-4 w-4" />
                 </Button>
-              </div>
-            </form>
+              </form>
+            </Form>
           </div>
 
           <div>
