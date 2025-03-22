@@ -37,7 +37,7 @@ export default function Header() {
           >
             Contact
           </Link>
-          <Button className="bg-gradient-to-r from-[#844b9d] to-purple-500 text-white hover:from-cyan-600 hover:to-blue-700">
+          <Button className="bg-gradient-to-r from-[#844b9d] to-[#61367a] text-white hover:brightness-110">
             Get a Quote
           </Button>
         </nav>
