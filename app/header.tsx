@@ -53,7 +53,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="border-b border-zinc-800 bg-zinc-900 md:hidden">
+        <div className="border-b border-zinc-800 bg-black/80 md:hidden">
           <div className="container mx-auto flex flex-col gap-4 px-4 py-4">
             <Link
               href="#services"
