@@ -1,5 +1,5 @@
 import Contact from "@/components/contact"
-import { Marquee3D } from "@/components/reviews"
+import { Marquee3D } from "@/components/marquee3D"
 import { ServiceCard } from "@/components/service-card"
 
 export const metadata = {
@@ -71,12 +71,13 @@ export default function Page() {
 
       {/* Testimonials Section */}
       <section className="bg-background py-20">
-        <div className="mx-auto max-w-7xl px-5">
+        <div className="container">
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-10">
             <div className="mb-10 lg:mb-0 lg:w-1/3">
               <h2 className="mb-4 text-3xl font-bold">What Our Clients Say</h2>
-              <p className="text-lg text-muted-foreground">
-                Don't just take our word for it. See what our satisfied customers have to say about our craftsmanship and service.
+              <p className="text-muted-foreground text-lg">
+                Don't just take our word for it. See what our satisfied
+                customers have to say about our craftsmanship and service.
               </p>
             </div>
             <div className="lg:w-2/3">
