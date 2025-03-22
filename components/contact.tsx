@@ -20,8 +20,11 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
+import { useState } from "react"
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -32,11 +35,37 @@ export default function Contact() {
     },
   })
 
-  function onSubmit(data: ContactFormValues) {
-    // Handle form submission logic here
-    console.log(data)
-    toast.success("Thank you for your message! We'll get back to you soon.")
-    form.reset()
+  async function onSubmit(data: ContactFormValues) {
+    try {
+      // Set loading state
+      setIsSubmitting(true)
+      
+      // Send the form data to our API route
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+      
+      const result = await response.json()
+      
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message")
+      }
+      
+      // Show success message
+      toast.success("Thank you for your message! We'll get back to you soon.")
+      form.reset()
+    } catch (error) {
+      // Show error message
+      toast.error(error instanceof Error ? error.message : "Failed to send message. Please try again.")
+      console.error("Contact form error:", error)
+    } finally {
+      // Reset loading state
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -129,10 +158,17 @@ export default function Contact() {
                 />
                 <Button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
                 >
-                  Send Message
-                  <Send className="ml-2 h-4 w-4" />
+                  {isSubmitting ? (
+                    <>Sending...</>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="ml-2 h-4 w-4" />
+                    </>
+                  )}
                 </Button>
               </form>
             </Form>
