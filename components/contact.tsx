@@ -1,10 +1,6 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import {
   Form,
   FormControl,
@@ -13,9 +9,16 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import { EMAIL_ADDRESS, LOCATION, PHONE_NUMBER } from "@/lib/constants"
+import {
+  contactFormSchema,
+  ContactFormValues,
+} from "@/lib/schemas/contact-schema"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
-import { contactFormSchema, ContactFormValues } from "@/lib/schemas/contact-schema"
+import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
 export default function Contact() {
@@ -38,7 +41,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-zinc-950 py-20">
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Contact Us</h2>
           <p className="mx-auto max-w-2xl text-zinc-400">
@@ -51,7 +54,10 @@ export default function Contact() {
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-8">
             <h3 className="mb-6 text-2xl font-bold">Send Us a Message</h3>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-4"
+              >
                 <FormField
                   control={form.control}
                   name="name"
