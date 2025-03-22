@@ -1,5 +1,7 @@
 "use client"
 
+import { EMAIL_ADDRESS, PHONE_NUMBER } from "@/lib/constants"
+
 export default function Footer() {
   return (
     <footer id="footer" className="bg-zinc-900 py-8 text-white">
@@ -10,14 +12,17 @@ export default function Footer() {
             reserved.
           </p>
           <div className="flex gap-6">
-            <a href="tel:+1234567890" className="text-sm hover:text-yellow-400">
-              (123) 456-7890
-            </a>
             <a
-              href="mailto:info@swervinsfabhaus.com"
+              href={`tel:${PHONE_NUMBER}`}
               className="text-sm hover:text-yellow-400"
             >
-              info@swervinsfabhaus.com
+              {PHONE_NUMBER}
+            </a>
+            <a
+              href={`mailto:${EMAIL_ADDRESS}`}
+              className="text-sm hover:text-yellow-400"
+            >
+              {EMAIL_ADDRESS}
             </a>
           </div>
         </div>
