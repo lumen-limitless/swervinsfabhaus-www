@@ -1,6 +1,6 @@
 import Contact from "@/components/contact"
 import { Marquee3D } from "@/components/marquee3D"
-import { ServiceCard } from "@/components/service-card"
+import { MetallicServiceCard } from "@/components/metallic-service-card"
 
 export const metadata = {
   title: "Swervin's Fab Haus - Custom Welding & Fabrication",
@@ -33,18 +33,47 @@ export default function Page() {
       {/* Services Section */}
       <section id="services" className="py-20">
         <div className="mx-auto max-w-7xl px-5">
-          <h2 className="mb-12 text-center text-3xl font-bold">Our Services</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {/* <div className="rounded-lg bg-zinc-100 p-6">
-              <h3 className="mb-4 text-xl font-semibold">Custom Fabrication</h3>
-              <p>
-                From concept to creation, we bring your metal fabrication
-                projects to life with precision and expertise.
-              </p>
-            </div> */}
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
+          <h2 className="mb-4 text-center text-4xl font-bold">Our Services</h2>
+          <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-muted-foreground">
+            Professional metal fabrication and welding services tailored to your specific needs
+          </p>
+          
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <MetallicServiceCard 
+              title="Custom Fabrication"
+              description="From concept to creation, we bring your metal fabrication projects to life with precision and expertise. We work with various metals to create custom solutions."
+              imageSrc="/images/custom-fabrication.jpg"
+            />
+            
+            <MetallicServiceCard 
+              title="Welding Services"
+              description="Professional MIG, TIG, and stick welding for all your projects. Our certified welders ensure strong, clean welds on all types of metals."
+              imageSrc="/images/welding.jpg"
+            />
+            
+            <MetallicServiceCard 
+              title="Metal Repairs"
+              description="Expert repair services for metal structures, equipment, and components. We can fix breaks, cracks, and structural issues in various metals."
+              imageSrc="/images/repairs.jpg"
+            />
+            
+            <MetallicServiceCard 
+              title="Architectural Metals"
+              description="Custom metal elements for architectural applications including railings, staircases, decorative elements, and structural components."
+              imageSrc="/images/architectural.jpg"
+            />
+            
+            <MetallicServiceCard 
+              title="Industrial Solutions"
+              description="Specialized fabrication for industrial applications including equipment modifications, custom parts, and production line components."
+              imageSrc="/images/industrial.jpg"
+            />
+            
+            <MetallicServiceCard 
+              title="Prototype Development"
+              description="Bring your ideas to life with our prototype development services. We help transform concepts into functional metal prototypes."
+              imageSrc="/images/prototype.jpg"
+            />
           </div>
         </div>
       </section>
