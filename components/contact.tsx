@@ -18,13 +18,13 @@ import {
 } from "@/lib/schemas/contact-schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
-import { useState } from "react"
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
-  
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -39,7 +39,7 @@ export default function Contact() {
     try {
       // Set loading state
       setIsSubmitting(true)
-      
+
       // Send the form data to our API route
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -48,19 +48,23 @@ export default function Contact() {
         },
         body: JSON.stringify(data),
       })
-      
+
       const result = await response.json()
-      
+
       if (!response.ok) {
         throw new Error(result.error || "Failed to send message")
       }
-      
+
       // Show success message
       toast.success("Thank you for your message! We'll get back to you soon.")
       form.reset()
     } catch (error) {
       // Show error message
-      toast.error(error instanceof Error ? error.message : "Failed to send message. Please try again.")
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again."
+      )
       console.error("Contact form error:", error)
     } finally {
       // Reset loading state
@@ -159,7 +163,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
+                  className="w-full bg-gradient-to-r from-accent to-[#61367a] text-white hover:brightness-90"
                 >
                   {isSubmitting ? (
                     <>Sending...</>
@@ -178,8 +182,8 @@ export default function Contact() {
             <h3 className="mb-6 text-2xl font-bold">Get in Touch</h3>
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="bg-accent/20 rounded-lg p-3">
-                  <MapPin className="text-accent h-6 w-6" />
+                <div className="rounded-lg bg-accent/20 p-3">
+                  <MapPin className="h-6 w-6 text-accent" />
                 </div>
                 <div>
                   <h4 className="mb-1 text-lg font-semibold">Our Location</h4>
@@ -188,8 +192,8 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-accent/20 rounded-lg p-3">
-                  <Phone className="text-accent-foreground h-6 w-6" />
+                <div className="rounded-lg bg-accent/20 p-3">
+                  <Phone className="h-6 w-6 text-accent-foreground" />
                 </div>
                 <div>
                   <h4 className="mb-1 text-lg font-semibold">Phone Number</h4>
@@ -198,8 +202,8 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-accent/20 rounded-lg p-3">
-                  <Mail className="text-accent h-6 w-6" />
+                <div className="rounded-lg bg-accent/20 p-3">
+                  <Mail className="h-6 w-6 text-accent" />
                 </div>
                 <div>
                   <h4 className="mb-1 text-lg font-semibold">Email Address</h4>

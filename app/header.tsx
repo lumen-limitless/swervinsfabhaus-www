@@ -37,9 +37,11 @@ export default function Header() {
           >
             Contact
           </Link>
-          <Button className="bg-gradient-to-r from-[#844b9d] to-[#61367a] text-white hover:brightness-90">
-            Get a Quote
-          </Button>
+          <Link passHref legacyBehavior href="#contact">
+            <Button className="bg-gradient-to-r from-accent to-[#61367a] text-white hover:brightness-90">
+              Get a Quote
+            </Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -77,9 +79,12 @@ export default function Header() {
             >
               Contact
             </Link>
-            <Button className="w-full bg-gradient-to-r from-[#844b9d] to-[#61367a] text-white hover:brightness-90">
-              Get a Quote
-            </Button>
+
+            <Link passHref legacyBehavior href="#contact">
+              <Button className="w-full bg-gradient-to-r from-[#844b9d] to-[#61367a] text-white hover:brightness-90">
+                Get a Quote
+              </Button>
+            </Link>
           </div>
         </div>
       )}
