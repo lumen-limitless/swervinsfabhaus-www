@@ -1,18 +1,21 @@
 import Contact from "@/components/contact"
 import { Marquee3D } from "@/components/marquee3D"
 import { MetallicServiceCard } from "@/components/metallic-service-card"
-
+import SupraPNG from "@/public/images/supra.jpeg"
+import Image from "next/image"
 export const metadata = {
   title: "Swervin's Fab Haus - Custom Welding & Fabrication",
   description:
     "Professional welding and metal fabrication services in Farmington, NY",
 }
+// AI! confine image to section
 
 export default function Page() {
   return (
     <div className="flex w-full flex-col">
       {/* Hero Section */}
       <section className="relative flex h-[600px] items-center justify-center bg-gradient-to-r from-zinc-900 to-zinc-800 px-5 text-white">
+        <Image src={SupraPNG} alt="" className="absolute inset-0 aspect-auto" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="z-10 mx-auto max-w-7xl text-center">
           <h1 className="mb-6 text-5xl font-bold">
@@ -35,41 +38,42 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="mb-4 text-center text-4xl font-bold">Our Services</h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-muted-foreground">
-            Professional metal fabrication and welding services tailored to your specific needs
+            Professional metal fabrication and welding services tailored to your
+            specific needs
           </p>
-          
+
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-            <MetallicServiceCard 
+            <MetallicServiceCard
               title="Custom Fabrication"
               description="From concept to creation, we bring your metal fabrication projects to life with precision and expertise. We work with various metals to create custom solutions."
               imageSrc="/images/custom-fabrication.jpg"
             />
-            
-            <MetallicServiceCard 
+
+            <MetallicServiceCard
               title="Welding Services"
               description="Professional MIG, TIG, and stick welding for all your projects. Our certified welders ensure strong, clean welds on all types of metals."
               imageSrc="/images/welding.jpg"
             />
-            
-            <MetallicServiceCard 
+
+            <MetallicServiceCard
               title="Metal Repairs"
               description="Expert repair services for metal structures, equipment, and components. We can fix breaks, cracks, and structural issues in various metals."
               imageSrc="/images/repairs.jpg"
             />
-            
-            <MetallicServiceCard 
+
+            <MetallicServiceCard
               title="Architectural Metals"
               description="Custom metal elements for architectural applications including railings, staircases, decorative elements, and structural components."
               imageSrc="/images/architectural.jpg"
             />
-            
-            <MetallicServiceCard 
+
+            <MetallicServiceCard
               title="Industrial Solutions"
               description="Specialized fabrication for industrial applications including equipment modifications, custom parts, and production line components."
               imageSrc="/images/industrial.jpg"
             />
-            
-            <MetallicServiceCard 
+
+            <MetallicServiceCard
               title="Prototype Development"
               description="Bring your ideas to life with our prototype development services. We help transform concepts into functional metal prototypes."
               imageSrc="/images/prototype.jpg"
@@ -104,7 +108,7 @@ export default function Page() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-10">
             <div className="mb-10 lg:mb-0 lg:w-1/3">
               <h2 className="mb-4 text-3xl font-bold">What Our Clients Say</h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-lg text-muted-foreground">
                 Don't just take our word for it. See what our satisfied
                 customers have to say about our craftsmanship and service.
               </p>
