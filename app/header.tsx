@@ -11,9 +11,9 @@ export default function Header() {
 
   return (
     <header className="sticky left-0 right-0 top-0 z-50 border-b border-zinc-800 bg-black/80 backdrop-blur-md">
-      <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        {/* Desktop Navigation - Left Side */}
-        <nav className="hidden items-center gap-6 md:flex">
+      <div className="container mx-auto flex items-center px-4 py-4">
+        {/* Desktop Navigation  */}
+        <nav className="ml-auto hidden items-center gap-6 md:flex">
           <Link
             href="#services"
             className="text-zinc-300 transition-colors hover:text-white"
@@ -39,7 +39,7 @@ export default function Header() {
             </Button>
           </Link>
         </nav>
-        
+
         {/* Logo - Centered */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <Link href="/" className="flex items-center gap-2">

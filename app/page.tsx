@@ -40,7 +40,7 @@ export default function Page() {
 
       {/* Animated Marquee */}
       <section className="bg-accent py-4 text-white">
-        <Marquee className="font-medium" pauseOnHover>
+        <Marquee className="font-medium" pauseOnHover reverse>
           <span className="mx-4 text-xl">QUALITY CRAFTSMANSHIP</span>
           <span className="mx-4 text-xl">CUSTOM FABRICATION</span>
           <span className="mx-4 text-xl">PRECISION WELDING</span>
