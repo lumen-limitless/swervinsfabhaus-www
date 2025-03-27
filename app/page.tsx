@@ -4,6 +4,7 @@ import { Marquee3D } from "@/components/marquee3D"
 import { MetallicServiceCard } from "@/components/metallic-service-card"
 import SupraPNG from "@/public/images/supra.jpeg"
 import Image from "next/image"
+
 export const metadata = {
   title: "Swervin's Fab Haus - Custom Welding & Fabrication",
   description:
@@ -63,7 +64,7 @@ export default function Page() {
             <MetallicServiceCard
               title="Custom Fabrication"
               description="From concept to creation, we bring your metal fabrication projects to life with precision and expertise. We work with various metals to create custom solutions."
-              imageSrc="/images/custom-fabrication.jpg"
+              imageSrc="/images/1.heic"
             />
 
             <MetallicServiceCard
@@ -78,17 +79,17 @@ export default function Page() {
               imageSrc="/images/repairs.jpg"
             />
 
-            <MetallicServiceCard
+            {/* <MetallicServiceCard
               title="Architectural Metals"
               description="Custom metal elements for architectural applications including railings, staircases, decorative elements, and structural components."
               imageSrc="/images/architectural.jpg"
-            />
+            /> */}
 
-            <MetallicServiceCard
+            {/* <MetallicServiceCard
               title="Industrial Solutions"
               description="Specialized fabrication for industrial applications including equipment modifications, custom parts, and production line components."
               imageSrc="/images/industrial.jpg"
-            />
+            /> */}
 
             <MetallicServiceCard
               title="Prototype Development"
