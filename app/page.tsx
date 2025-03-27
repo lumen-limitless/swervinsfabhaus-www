@@ -8,17 +8,16 @@ export const metadata = {
   description:
     "Professional welding and metal fabrication services in Farmington, NY",
 }
-// AI! confine image to section
 
 export default function Page() {
   return (
     <div className="flex w-full flex-col">
       {/* Hero Section */}
       <section className="relative flex h-[600px] items-center justify-center bg-gradient-to-r from-zinc-900 to-zinc-800 px-5 text-white">
-        <Image 
-          src={SupraPNG} 
-          alt="Custom car fabrication" 
-          className="absolute inset-0 h-full w-full object-cover" 
+        <Image
+          src={SupraPNG}
+          alt="Custom car fabrication"
+          className="absolute inset-0 h-full w-full object-cover"
           priority
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -31,7 +30,7 @@ export default function Page() {
           </p>
           <a
             href="#contact"
-            className="rounded-md bg-yellow-400 px-8 py-3 font-semibold text-black transition hover:bg-yellow-500"
+            className="rounded-md bg-gradient-to-r from-accent to-[#61367a] px-8 py-3 font-semibold text-white transition hover:brightness-90"
           >
             Get a Quote
           </a>
