@@ -68,15 +68,9 @@ export default function Page() {
             />
 
             <MetallicServiceCard
-              title="Welding Services"
-              description="Professional MIG, TIG, and stick welding for all your projects. Our certified welders ensure strong, clean welds on all types of metals."
+              title="Welding & Repair Services"
+              description="Professional MIG, TIG, and stick welding combined with expert repair capabilities. We fix and strengthen metal structures, equipment, and components with precision and quality craftsmanship."
               imageSrc="/images/welding.jpg"
-            />
-
-            <MetallicServiceCard
-              title="Metal Repairs"
-              description="Expert repair services for metal structures, equipment, and components. We can fix breaks, cracks, and structural issues in various metals."
-              imageSrc="/images/repairs.jpg"
             />
 
             {/* <MetallicServiceCard
