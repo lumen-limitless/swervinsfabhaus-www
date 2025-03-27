@@ -1,4 +1,5 @@
 import Contact from "@/components/contact"
+import { Marquee } from "@/components/magicui/marquee"
 import { Marquee3D } from "@/components/marquee3D"
 import { MetallicServiceCard } from "@/components/metallic-service-card"
 import SupraPNG from "@/public/images/supra.jpeg"
@@ -35,6 +36,18 @@ export default function Page() {
             Get a Quote
           </a>
         </div>
+      </section>
+
+      {/* Animated Marquee */}
+      <section className="bg-accent py-4 text-white">
+        <Marquee className="font-medium" pauseOnHover>
+          <span className="mx-4 text-xl">QUALITY CRAFTSMANSHIP</span>
+          <span className="mx-4 text-xl">CUSTOM FABRICATION</span>
+          <span className="mx-4 text-xl">PRECISION WELDING</span>
+          <span className="mx-4 text-xl">METAL EXPERTS</span>
+          <span className="mx-4 text-xl">FARMINGTON, NY</span>
+          <span className="mx-4 text-xl">SATISFACTION GUARANTEED</span>
+        </Marquee>
       </section>
 
       {/* Services Section */}
