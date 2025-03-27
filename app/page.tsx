@@ -15,7 +15,12 @@ export default function Page() {
     <div className="flex w-full flex-col">
       {/* Hero Section */}
       <section className="relative flex h-[600px] items-center justify-center bg-gradient-to-r from-zinc-900 to-zinc-800 px-5 text-white">
-        <Image src={SupraPNG} alt="" className="absolute inset-0 aspect-auto" />
+        <Image 
+          src={SupraPNG} 
+          alt="Custom car fabrication" 
+          className="absolute inset-0 h-full w-full object-cover" 
+          priority
+        />
         <div className="absolute inset-0 bg-black/50" />
         <div className="z-10 mx-auto max-w-7xl text-center">
           <h1 className="mb-6 text-5xl font-bold">
