@@ -11,12 +11,8 @@ export default function Header() {
 
   return (
     <header className="sticky left-0 right-0 top-0 z-50 border-b border-zinc-800 bg-black/80 backdrop-blur-md">
-      <div className="container mx-auto flex items-center px-4 py-4">
-        <Link href="/" className="flex items-center gap-2">
-          <SfaSVG className="h-8" />
-        </Link>
-
-        {/* Desktop Navigation */}
+      <div className="container mx-auto flex items-center justify-between px-4 py-4">
+        {/* Desktop Navigation - Left Side */}
         <nav className="hidden items-center gap-6 md:flex">
           <Link
             href="#services"
@@ -43,10 +39,17 @@ export default function Header() {
             </Button>
           </Link>
         </nav>
+        
+        {/* Logo - Centered */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+          <Link href="/" className="flex items-center gap-2">
+            <SfaSVG className="h-8" />
+          </Link>
+        </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Right Side */}
         <button
-          className="text-white md:hidden"
+          className="ml-auto text-white md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
