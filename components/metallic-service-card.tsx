@@ -24,8 +24,14 @@ export function MetallicServiceCard({
         {/* <div className="absolute -right-1 -top-1 h-16 w-16 bg-gradient-to-br from-yellow-300 to-yellow-500 skew-x-12 skew-y-12" /> */}
 
         {/* Image background with overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <Image src={imageSrc} alt={title} fill className="object-cover" />
+        <div className="absolute inset-0 opacity-30">
+          {imageSrc.split(".")[1].match("jpeg|webp") ? (
+            <Image src={imageSrc} alt={title} fill className="object-cover" />
+          ) : (
+            <video autoPlay loop controls={false} muted>
+              <source src={imageSrc} />
+            </video>
+          )}
         </div>
 
         {/* Content */}
