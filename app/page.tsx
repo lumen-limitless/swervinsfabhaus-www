@@ -64,13 +64,13 @@ export default function Page() {
             <MetallicServiceCard
               title="Custom Fabrication"
               description="From concept to creation, we bring your metal fabrication projects to life with precision and expertise. We work with various metals to create custom solutions."
-              imageSrc="/images/1.heic"
+              imageSrc="/images/exhaust.webp"
             />
 
             <MetallicServiceCard
               title="Welding & Repair Services"
               description="Professional MIG, TIG, and stick welding combined with expert repair capabilities. We fix and strengthen metal structures, equipment, and components with precision and quality craftsmanship."
-              imageSrc="/images/welding.jpg"
+              imageSrc="/images/welding.mov"
             />
 
             {/* <MetallicServiceCard
@@ -88,7 +88,7 @@ export default function Page() {
             <MetallicServiceCard
               title="Prototype Development"
               description="Bring your ideas to life with our prototype development services. We help transform concepts into functional metal prototypes."
-              imageSrc="/images/prototype.jpg"
+              imageSrc="/images/prototype.mov"
             />
           </div>
         </div>
