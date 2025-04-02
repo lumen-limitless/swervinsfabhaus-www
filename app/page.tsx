@@ -40,14 +40,14 @@ export default function Page() {
       </section>
 
       {/* Animated Marquee */}
-      <section className="bg-accent py-3 text-white">
-        <Marquee className="font-medium py-1" pauseOnHover>
-          <span className="mx-4 text-xl font-semibold tracking-wide">QUALITY CRAFTSMANSHIP</span>
-          <span className="mx-4 text-xl font-semibold tracking-wide">CUSTOM FABRICATION</span>
-          <span className="mx-4 text-xl font-semibold tracking-wide">PRECISION WELDING</span>
-          <span className="mx-4 text-xl font-semibold tracking-wide">METAL EXPERTS</span>
-          <span className="mx-4 text-xl font-semibold tracking-wide">FARMINGTON, NY</span>
-          <span className="mx-4 text-xl font-semibold tracking-wide">SATISFACTION GUARANTEED</span>
+      <section className="bg-accent py-2 text-white">
+        <Marquee className="py-2" pauseOnHover>
+          <span className="mx-6 text-xl font-bold tracking-wider">QUALITY CRAFTSMANSHIP</span>
+          <span className="mx-6 text-xl font-bold tracking-wider">CUSTOM FABRICATION</span>
+          <span className="mx-6 text-xl font-bold tracking-wider">PRECISION WELDING</span>
+          <span className="mx-6 text-xl font-bold tracking-wider">METAL EXPERTS</span>
+          <span className="mx-6 text-xl font-bold tracking-wider">FARMINGTON, NY</span>
+          <span className="mx-6 text-xl font-bold tracking-wider">SATISFACTION GUARANTEED</span>
         </Marquee>
       </section>
 
