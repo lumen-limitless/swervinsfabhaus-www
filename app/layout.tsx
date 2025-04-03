@@ -3,6 +3,7 @@ import Header from "@/app/header"
 import Main from "@/app/main"
 import { cn } from "@/lib/utils"
 import { Viewport } from "next"
+import dynamic from "next/dynamic"
 import { Roboto } from "next/font/google"
 import "./globals.css"
 import { defaultMetadata } from "./metadata"
@@ -17,6 +18,8 @@ export const metadata = defaultMetadata
 export const viewport: Viewport = {
   themeColor: "#000000",
 }
+
+const Analytics = dynamic(() => import("@/app/analytics"))
 
 export default function RootLayout({
   children,
@@ -41,7 +44,7 @@ export default function RootLayout({
       >
         <a
           href="#main"
-          className="sr-only absolute left-[-999px] top-[-999px] block border bg-[#ffc] text-black focus:not-sr-only focus:bottom-0 focus:top-0 focus:border-[#990000]"
+          className="sr-only absolute top-[-999px] left-[-999px] block border bg-[#ffc] text-black focus:not-sr-only focus:top-0 focus:bottom-0 focus:border-[#990000]"
           aria-label="skip"
           id="skip"
         >
@@ -53,6 +56,8 @@ export default function RootLayout({
         <Main>{children}</Main>
 
         <Footer />
+
+        <Analytics />
 
         <TailwindIndicator />
       </body>
