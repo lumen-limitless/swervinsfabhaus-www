@@ -34,7 +34,7 @@ export default function Header() {
             Contact
           </Link>
           <Link passHref legacyBehavior href="#contact">
-            <Button className="bg-gradient-to-r from-accent to-[#61367a] text-white hover:brightness-90">
+            <Button className="bg-linear-to-r from-accent to-[#61367a] text-white hover:brightness-90">
               Get a Quote
             </Button>
           </Link>
@@ -84,7 +84,7 @@ export default function Header() {
             </Link>
 
             <Link passHref legacyBehavior href="#contact">
-              <Button className="w-full bg-gradient-to-r from-[#844b9d] to-[#61367a] text-white hover:brightness-90">
+              <Button className="w-full bg-linear-to-r from-[#844b9d] to-[#61367a] text-white hover:brightness-90">
                 Get a Quote
               </Button>
             </Link>

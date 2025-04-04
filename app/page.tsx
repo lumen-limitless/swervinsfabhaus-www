@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <div className="flex w-full flex-col">
       {/* Hero Section */}
-      <section className="relative flex h-[600px] items-center justify-center bg-gradient-to-r from-zinc-900 to-zinc-800 px-5 text-white">
+      <section className="relative flex h-[600px] items-center justify-center bg-linear-to-r from-zinc-900 to-zinc-800 px-5 text-white">
         <Image
           src={SupraPNG}
           alt="Custom car fabrication"
@@ -32,7 +32,7 @@ export default function Page() {
           </p>
           <a
             href="#contact"
-            className="rounded-md bg-gradient-to-r from-accent to-[#61367a] px-8 py-3 font-semibold text-white transition hover:brightness-90"
+            className="rounded-md bg-linear-to-r from-accent to-[#61367a] px-8 py-3 font-semibold text-white transition hover:brightness-90"
           >
             Get a Quote
           </a>

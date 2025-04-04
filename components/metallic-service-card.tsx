@@ -16,12 +16,12 @@ export function MetallicServiceCard({
   return (
     <div className="group relative h-full w-full transform-gpu transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       {/* Metallic background with slanted edges */}
-      <div className="absolute inset-0 skew-y-1 transform-gpu bg-gradient-to-br from-zinc-300 via-zinc-400 to-zinc-500 shadow-md" />
+      <div className="absolute inset-0 skew-y-1 transform-gpu bg-linear-to-br from-zinc-300 via-zinc-400 to-zinc-500 shadow-md" />
 
       {/* Content container */}
-      <div className="relative z-10 flex h-full flex-col overflow-hidden rounded-sm border border-zinc-700/20 bg-gradient-to-br from-zinc-200 via-zinc-300 to-zinc-400 p-6 shadow-md">
+      <div className="relative z-10 flex h-full flex-col overflow-hidden rounded-sm border border-zinc-700/20 bg-linear-to-br from-zinc-200 via-zinc-300 to-zinc-400 p-6 shadow-md">
         {/* Highlight edge */}
-        {/* <div className="absolute -right-1 -top-1 h-16 w-16 bg-gradient-to-br from-yellow-300 to-yellow-500 skew-x-12 skew-y-12" /> */}
+        {/* <div className="absolute -right-1 -top-1 h-16 w-16 bg-linear-to-br from-yellow-300 to-yellow-500 skew-x-12 skew-y-12" /> */}
 
         {/* Image background with overlay */}
         <div className="absolute inset-0 opacity-30">
@@ -43,9 +43,9 @@ export function MetallicServiceCard({
 
           {/* Metallic button */}
           <div className="mt-6">
-            <button className="group/btn relative overflow-hidden rounded-sm bg-gradient-to-r from-zinc-700 to-zinc-800 px-4 py-2 text-sm font-medium text-white transition-all hover:from-zinc-800 hover:to-zinc-900">
+            <button className="group/btn relative overflow-hidden rounded-sm bg-linear-to-r from-zinc-700 to-zinc-800 px-4 py-2 text-sm font-medium text-white transition-all hover:from-zinc-800 hover:to-zinc-900">
               <span className="relative z-10">Learn More</span>
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-yellow-400 to-yellow-500 opacity-0 transition-all duration-300 group-hover/btn:translate-x-0 group-hover/btn:opacity-20"></span>
+              <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-yellow-400 to-yellow-500 opacity-0 transition-all duration-300 group-hover/btn:translate-x-0 group-hover/btn:opacity-20"></span>
             </button>
           </div>
         </div>

@@ -163,7 +163,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-accent to-[#61367a] text-white hover:brightness-90"
+                  className="w-full bg-linear-to-r from-accent to-[#61367a] text-white hover:brightness-90"
                 >
                   {isSubmitting ? (
                     <>Sending...</>
