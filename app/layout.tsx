@@ -1,3 +1,5 @@
+import "./globals.css"
+
 import Footer from "@/app/footer"
 import Header from "@/app/header"
 import Main from "@/app/main"
@@ -6,7 +8,6 @@ import { cn } from "@/lib/utils"
 import { Viewport } from "next"
 import dynamic from "next/dynamic"
 import { Roboto } from "next/font/google"
-import "./globals.css"
 import { defaultMetadata } from "./metadata"
 
 const roboto = Roboto({
