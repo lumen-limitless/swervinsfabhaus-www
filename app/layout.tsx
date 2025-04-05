@@ -1,6 +1,7 @@
 import Footer from "@/app/footer"
 import Header from "@/app/header"
 import Main from "@/app/main"
+import { Toaster } from "@/components/ui/sonner"
 import { cn } from "@/lib/utils"
 import { Viewport } from "next"
 import dynamic from "next/dynamic"
@@ -56,6 +57,8 @@ export default function RootLayout({
         <Main>{children}</Main>
 
         <Footer />
+
+        <Toaster />
 
         <Analytics />
 

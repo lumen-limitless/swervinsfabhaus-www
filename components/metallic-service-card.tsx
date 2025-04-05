@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 interface MetallicServiceCardProps {
   title: string
@@ -39,22 +40,24 @@ export function MetallicServiceCard({
           {icon && <div className="mb-4 text-yellow-600">{icon}</div>}
           <h3 className="mb-3 text-xl font-bold text-zinc-900">{title}</h3>
           <div className="mb-2 h-1 w-12 bg-yellow-500" />
-          <p className="flex-1 text-zinc-700">{description}</p>
+          <p className="flex-1 font-semibold text-zinc-800">{description}</p>
 
           {/* Metallic button */}
           <div className="mt-6">
-            <button className="group/btn relative overflow-hidden rounded-sm bg-linear-to-r from-zinc-700 to-zinc-800 px-4 py-2 text-sm font-medium text-white transition-all hover:from-zinc-800 hover:to-zinc-900">
-              <span className="relative z-10">Learn More</span>
-              <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-yellow-400 to-yellow-500 opacity-0 transition-all duration-300 group-hover/btn:translate-x-0 group-hover/btn:opacity-20"></span>
-            </button>
+            <Link legacyBehavior passHref href={"#contact"}>
+              <button className="group/btn relative overflow-hidden rounded-sm bg-linear-to-r from-zinc-700 to-zinc-800 px-4 py-2 text-sm font-medium text-white transition-all hover:from-zinc-800 hover:to-zinc-900">
+                <span className="relative z-10">Learn More</span>
+                <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-yellow-400 to-yellow-500 opacity-0 transition-all duration-300 group-hover/btn:translate-x-0 group-hover/btn:opacity-20"></span>
+              </button>
+            </Link>
           </div>
         </div>
 
         {/* Rivets decoration */}
-        <div className="absolute left-3 top-3 h-2 w-2 rounded-full bg-zinc-700" />
+        <div className="absolute top-3 left-3 h-2 w-2 rounded-full bg-zinc-700" />
         <div className="absolute bottom-3 left-3 h-2 w-2 rounded-full bg-zinc-700" />
-        <div className="absolute right-3 top-3 h-2 w-2 rounded-full bg-zinc-700" />
-        <div className="absolute bottom-3 right-3 h-2 w-2 rounded-full bg-zinc-700" />
+        <div className="absolute top-3 right-3 h-2 w-2 rounded-full bg-zinc-700" />
+        <div className="absolute right-3 bottom-3 h-2 w-2 rounded-full bg-zinc-700" />
       </div>
     </div>
   )
