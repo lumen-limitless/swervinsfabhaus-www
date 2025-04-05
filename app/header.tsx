@@ -10,9 +10,16 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-50 border-b border-zinc-800 bg-black/80 backdrop-blur-md">
-      <div className="container mx-auto flex items-center px-4 py-4">
-        {/* Desktop Navigation  */}
+    <header className="sticky top-0 right-0 left-0 z-50 border-b border-zinc-800 bg-black/80 backdrop-blur-md">
+      <div className="relative container mx-auto flex items-center px-4 py-4">
+        {/* Logo - Centered */}
+        <div className="absolute left-1/2 -translate-x-1/2 transform">
+          <Link href="/" className="flex items-center gap-2">
+            <SfaSVG className="h-8" />
+          </Link>
+        </div>
+
+        {/* Desktop Navigation */}
         <nav className="ml-auto hidden items-center gap-6 md:flex">
           <Link
             href="#services"
@@ -26,7 +33,6 @@ export default function Header() {
           >
             About
           </Link>
-
           <Link
             href="#contact"
             className="text-zinc-300 transition-colors hover:text-white"
@@ -34,31 +40,30 @@ export default function Header() {
             Contact
           </Link>
           <Link passHref legacyBehavior href="#contact">
-            <Button className="bg-linear-to-r from-accent to-[#61367a] text-white hover:brightness-90">
+            <Button className="from-accent bg-linear-to-r to-[#61367a] text-white hover:brightness-90">
               Get a Quote
             </Button>
           </Link>
         </nav>
 
-        {/* Logo - Centered */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-          <Link href="/" className="flex items-center gap-2">
-            <SfaSVG className="h-8" />
-          </Link>
-        </div>
-
         {/* Mobile Menu Button - Right Side */}
-        <button
-          className="ml-auto text-white md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="ml-auto md:hidden">
+          <button
+            className="text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="border-b border-zinc-800 md:hidden">
+      {/* Mobile Navigation - Animated Dropdown */}
+      <div
+        className={`mobile-nav-container overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+          isMenuOpen ? "max-h-60" : "max-h-0"
+        }`}
+      >
+        <div className="border-t border-zinc-800">
           <div className="container mx-auto flex flex-col gap-4 px-4 py-4">
             <Link
               href="#services"
@@ -74,7 +79,6 @@ export default function Header() {
             >
               About
             </Link>
-
             <Link
               href="#contact"
               className="py-2 text-zinc-300 transition-colors hover:text-white"
@@ -82,7 +86,6 @@ export default function Header() {
             >
               Contact
             </Link>
-
             <Link passHref legacyBehavior href="#contact">
               <Button className="w-full bg-linear-to-r from-[#844b9d] to-[#61367a] text-white hover:brightness-90">
                 Get a Quote
@@ -90,7 +93,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
-      )}
+      </div>
     </header>
   )
 }
