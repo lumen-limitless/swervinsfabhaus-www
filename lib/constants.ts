@@ -5,4 +5,4 @@ export const EMAIL_ADDRESS = "swervinsfabhaus@gmail.com"
 
 export const PHONE_NUMBER = "(585) 754-5699"
 
-export const LOCATION = "4900 Plastermill Road, Farmington, NY 14425"
+export const LOCATION = "5900 Plastermill Road, Farmington, NY 14425"

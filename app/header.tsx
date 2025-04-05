@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import SfaSVG from "@/public/sfa.svg"
+import SfaSVG from "@/public/logo-purple.svg"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
