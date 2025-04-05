@@ -26,12 +26,14 @@ export function MetallicServiceCard({
 
         {/* Image background with overlay */}
         <div className="absolute inset-0 opacity-30">
-          {imageSrc.split(".")[1].match("jpeg|webp") ? (
+          {/\.(jpe?g|png|gif|bmp|webp|avif|svg)$/i.test(imageSrc) ? (
             <Image src={imageSrc} alt={title} fill className="object-cover" />
-          ) : (
+          ) : /\.(mp4|webm|ogg|mov|avi|wmv|flv|mkv)$/i.test(imageSrc) ? (
             <video autoPlay loop controls={false} muted playsInline>
               <source src={imageSrc} />
             </video>
+          ) : (
+            <Image src={imageSrc} alt={title} fill className="object-cover" />
           )}
         </div>
 
