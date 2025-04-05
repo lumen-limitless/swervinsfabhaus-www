@@ -29,7 +29,7 @@ export function MetallicServiceCard({
           {imageSrc.split(".")[1].match("jpeg|webp") ? (
             <Image src={imageSrc} alt={title} fill className="object-cover" />
           ) : (
-            <video autoPlay loop controls={false} muted>
+            <video autoPlay loop controls={false} muted playsInline>
               <source src={imageSrc} />
             </video>
           )}
