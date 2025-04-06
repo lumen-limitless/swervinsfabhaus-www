@@ -11,13 +11,26 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { EMAIL_ADDRESS, LOCATION, PHONE_NUMBER } from "@/lib/constants"
+import {
+  EMAIL_ADDRESS,
+  LOCATION,
+  PHONE_NUMBER,
+  SOCIAL_LINKS,
+} from "@/lib/constants"
 import {
   contactFormSchema,
   ContactFormValues,
 } from "@/lib/schemas/contact-schema"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Youtube,
+} from "lucide-react"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
@@ -163,7 +176,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-linear-to-r from-accent to-[#61367a] text-white hover:brightness-90"
+                  className="from-accent w-full bg-linear-to-r to-[#61367a] text-white hover:brightness-90"
                 >
                   {isSubmitting ? (
                     <>Sending...</>
@@ -182,8 +195,8 @@ export default function Contact() {
             <h3 className="mb-6 text-2xl font-bold">Get in Touch</h3>
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="rounded-lg bg-accent/20 p-3">
-                  <MapPin className="h-6 w-6 text-accent" />
+                <div className="bg-accent/20 rounded-lg p-3">
+                  <MapPin className="text-accent h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="mb-1 text-lg font-semibold">Our Location</h4>
@@ -192,8 +205,8 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="rounded-lg bg-accent/20 p-3">
-                  <Phone className="h-6 w-6 text-accent-foreground" />
+                <div className="bg-accent/20 rounded-lg p-3">
+                  <Phone className="text-accent-foreground h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="mb-1 text-lg font-semibold">Phone Number</h4>
@@ -202,8 +215,8 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="rounded-lg bg-accent/20 p-3">
-                  <Mail className="h-6 w-6 text-accent" />
+                <div className="bg-accent/20 rounded-lg p-3">
+                  <Mail className="text-accent h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="mb-1 text-lg font-semibold">Email Address</h4>
@@ -227,6 +240,36 @@ export default function Contact() {
                   <span>Sunday:</span>
                   <span>Closed</span>
                 </div>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <h3 className="mb-6 text-2xl font-bold">Connect With Us</h3>
+              <div className="flex flex-wrap items-center gap-4">
+                {SOCIAL_LINKS.map((social) => {
+                  const IconComponent =
+                    social.icon === "Instagram"
+                      ? Instagram
+                      : social.icon === "Facebook"
+                        ? Facebook
+                        : social.icon === "Youtube"
+                          ? Youtube
+                          : Instagram // Fallback
+
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group hover:bg-accent/20 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-800 transition-all hover:scale-110"
+                      aria-label={`Visit our ${social.name}`}
+                    >
+                      <IconComponent className="group-hover:text-accent h-5 w-5 text-zinc-400 transition-colors" />
+                      <span className="sr-only">{social.name}</span>
+                    </a>
+                  )
+                })}
               </div>
             </div>
           </div>
